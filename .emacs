@@ -42,3 +42,7 @@
 
 ;; programming mode hook(s)
 (add-hook 'prog-mode-hook 'smartparens-mode)
+
+;; custom set variable(s)
+(setq-default show-trailing-whitespace t
+	      delete-trailing-lines t)
