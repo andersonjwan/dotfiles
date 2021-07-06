@@ -19,7 +19,7 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company)
+  '(company smartparens)
   "List of packages to install")
 
 ;; refresh the list of available packages
@@ -31,5 +31,11 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; manually enable package mode(s)
+;; package-specific requirement(s)
+(require 'smartparens-config)
+
+;; after initialization hook(s)
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; programming mode hook(s)
+(add-hook 'prog-mode-hook 'smartparens-mode)
