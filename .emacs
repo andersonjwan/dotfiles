@@ -19,7 +19,7 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '()
+  '(company)
   "List of packages to install")
 
 ;; refresh the list of available packages
@@ -30,3 +30,6 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; manually enable package mode(s)
+(add-hook 'after-init-hook 'global-company-mode)
