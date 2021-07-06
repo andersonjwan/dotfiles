@@ -15,3 +15,18 @@
 
 ;; init packages before modifying
 (package-initialize)
+
+;; install packages automatically if not preset
+;; list of packages
+(defconst package-list
+  '()
+  "List of packages to install")
+
+;; refresh the list of available packages
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
