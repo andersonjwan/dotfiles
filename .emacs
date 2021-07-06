@@ -19,7 +19,7 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck)
+  '(company smartparens flycheck editorconfig)
   "List of packages to install")
 
 ;; refresh the list of available packages
@@ -34,9 +34,11 @@
 ;; package-specific requirement(s)
 (require 'smartparens-config)
 
+;;; hook(s)
 ;; after initialization hook(s)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'after-init-hook 'editorconfig-mode)
 
 ;; programming mode hook(s)
 (add-hook 'prog-mode-hook 'smartparens-mode)
