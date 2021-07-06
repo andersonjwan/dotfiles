@@ -19,7 +19,7 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig)
+  '(company smartparens flycheck editorconfig dracula-theme)
   "List of packages to install")
 
 ;; refresh the list of available packages
@@ -46,3 +46,7 @@
 ;; custom set variable(s)
 (setq-default show-trailing-whitespace t
 	      delete-trailing-lines t)
+
+;;; themes
+;; set the default theme
+(load-theme 'dracula t)
