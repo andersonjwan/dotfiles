@@ -58,4 +58,4 @@
 
 ;;; themes
 ;; set the default theme
-(load-theme 'dracula t)
+(load-theme 'spacemacs-dark t)
