@@ -52,15 +52,15 @@
 ;; programming mode hook(s)
 (defun prog-mode-configs ()
   "`prog-mode' specific set of configurations."
+  ;; custom set variable(s)
+  (setq show-trailing-whitespace t)
+  (setq delete-trailing-lines t)
+
   ;; custom enabled minor mode(s)
   (smartparens-mode))
 
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
-
-;; custom set variable(s)
-(setq-default show-trailing-whitespace t
-	      delete-trailing-lines t)
 
 ;;; themes
 ;; set the default theme
