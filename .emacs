@@ -20,7 +20,7 @@
 ;; list of packages
 (defconst package-list
   '(company smartparens flycheck editorconfig dracula-theme)
-  "List of packages to install")
+  "List of packages to install.")
 
 ;; refresh the list of available packages
 (unless package-archive-contents
