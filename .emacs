@@ -19,17 +19,26 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig dracula-theme)
+  '(company smartparens flycheck editorconfig)
   "List of packages to install.")
+
+(defconst theme-list
+  '(dracula-theme spacemacs-theme)
+  "List of themes to install.")
 
 ;; refresh the list of available packages
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; install the missing packages
+;; install missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; install missing themes
+(dolist (theme theme-list)
+  (unless (package-installed-p theme)
+    (package-install theme)))
 
 ;; package-specific requirement(s)
 (require 'smartparens-config)
