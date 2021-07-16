@@ -46,7 +46,6 @@
 ;;; hook(s)
 ;; after initialization hook(s)
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;; programming mode hook(s)
 (defun prog-mode-configs ()
@@ -57,7 +56,8 @@
 
   ;; custom enabled minor mode(s)
   (smartparens-mode)
-  (editorconfig-mode))
+  (editorconfig-mode)
+  (flycheck-mode))
 
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
