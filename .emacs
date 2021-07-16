@@ -71,3 +71,13 @@
 ;;; themes
 ;; set the default theme
 (load-theme 'spacemacs-dark t)
+
+;; system-dependent config(s)
+(cond ((eq system-type 'darwin)
+       ;; mac-os configs
+       ;; install exec-path-from-shell for OSX
+       (unless (package-installed-p 'exec-path-from-shell)
+	 (package-install 'exec-path-from-shell))
+
+       ;; update $PATH environment for emacs
+       (exec-path-from-shell-initialize)))
