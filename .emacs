@@ -19,34 +19,65 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig dracula-theme)
-  "List of packages to install")
+  '(company smartparens flycheck editorconfig)
+  "List of packages to install.")
+
+(defconst theme-list
+  '(dracula-theme spacemacs-theme)
+  "List of themes to install.")
 
 ;; refresh the list of available packages
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; install the missing packages
+;; install missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; install missing themes
+(dolist (theme theme-list)
+  (unless (package-installed-p theme)
+    (package-install theme)))
 
 ;; package-specific requirement(s)
 (require 'smartparens-config)
 
 ;;; hook(s)
 ;; after initialization hook(s)
+(defun after-init-configs ()
+  "`after-init` specific set of configurations."
+  ;; custom enabled minor mode(s)
+  (global-company-mode))
+
+;; configure `after-init'
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'after-init-hook 'editorconfig-mode)
 
 ;; programming mode hook(s)
-(add-hook 'prog-mode-hook 'smartparens-mode)
+(defun prog-mode-configs ()
+  "`prog-mode' specific set of configurations."
+  ;; custom set variable(s)
+  (setq show-trailing-whitespace t)
+  (setq delete-trailing-lines t)
 
-;; custom set variable(s)
-(setq-default show-trailing-whitespace t
-	      delete-trailing-lines t)
+  ;; custom enabled minor mode(s)
+  (smartparens-mode)
+  (editorconfig-mode)
+  (flycheck-mode))
+
+;; configure `prog-mode'
+(add-hook 'prog-mode-hook 'prog-mode-configs)
 
 ;;; themes
 ;; set the default theme
-(load-theme 'dracula t)
+(load-theme 'spacemacs-dark t)
+
+;; system-dependent config(s)
+(cond ((eq system-type 'darwin)
+       ;; mac-os configs
+       ;; install exec-path-from-shell for OSX
+       (unless (package-installed-p 'exec-path-from-shell)
+	 (package-install 'exec-path-from-shell))
+
+       ;; update $PATH environment for emacs
+       (exec-path-from-shell-initialize)))
