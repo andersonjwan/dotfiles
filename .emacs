@@ -45,6 +45,12 @@
 
 ;;; hook(s)
 ;; after initialization hook(s)
+(defun after-init-configs ()
+  "`after-init` specific set of configurations."
+  ;; custom enabled minor mode(s)
+  (global-company-mode))
+
+;; configure `after-init'
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; programming mode hook(s)
