@@ -50,7 +50,13 @@
 (add-hook 'after-init-hook 'editorconfig-mode)
 
 ;; programming mode hook(s)
-(add-hook 'prog-mode-hook 'smartparens-mode)
+(defun prog-mode-configs ()
+  "`prog-mode' specific set of configurations."
+  ;; custom enabled minor mode(s)
+  (smartparens-mode))
+
+;; configure `prog-mode'
+(add-hook 'prog-mode-hook 'prog-mode-configs)
 
 ;; custom set variable(s)
 (setq-default show-trailing-whitespace t
