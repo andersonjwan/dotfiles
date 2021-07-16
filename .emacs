@@ -47,7 +47,6 @@
 ;; after initialization hook(s)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'after-init-hook 'editorconfig-mode)
 
 ;; programming mode hook(s)
 (defun prog-mode-configs ()
@@ -57,7 +56,8 @@
   (setq delete-trailing-lines t)
 
   ;; custom enabled minor mode(s)
-  (smartparens-mode))
+  (smartparens-mode)
+  (editorconfig-mode))
 
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
