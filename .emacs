@@ -61,6 +61,8 @@
   (setq delete-trailing-lines t)
 
   ;; custom enabled minor mode(s)
+  (column-number-mode)
+  (display-line-numbers-mode)
   (smartparens-mode)
   (editorconfig-mode)
   (flycheck-mode))
