@@ -78,7 +78,7 @@
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
 
-  (setq-default TeX-master nil)
+  (setq-default TeX-master "main")
 
   ;; custom enabled minor mode(s)
   (turn-on-reftex))
