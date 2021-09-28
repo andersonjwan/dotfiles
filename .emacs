@@ -20,7 +20,7 @@
 ;; list of packages
 (defconst package-list
   '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode
-	    company-reftex)
+	    auctex company-reftex)
   "List of packages to install.")
 
 (defconst theme-list
