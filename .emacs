@@ -71,15 +71,15 @@
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
 
-;; latex mode hook(s)
-(defun latex-mode-configs()
-  "`latex-mode' specific set of configurations."
+;; auctex mode hook(s)
+(defun auctex-mode-configs()
+  "`auctex-mode' specific set of configurations."
 
   ;; custom enabled minor mode(s)
-  (reftex-mode))
+  (turn-on-reftex))
 
-;; configure `latex-mode'
-(add-hook 'latex-mode-hook 'latex-mode-configs)
+;; configure `auctex-mode'
+(add-hook 'LaTeX-mode-hook 'auctex-mode-configs)
 
 ;;; themes
 ;; set the default theme
