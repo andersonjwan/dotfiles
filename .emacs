@@ -78,6 +78,8 @@
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
 
+  (setq font-latex-fontify-sectioning 'color)
+
   (setq-default TeX-master "main")
 
   ;; custom enabled minor mode(s)
