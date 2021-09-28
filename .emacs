@@ -70,6 +70,13 @@
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
 
+;; latex mode hook(s)
+(defun latex-mode-configs()
+  "`latex-mode' specific set of configurations.")
+
+;; configure `latex-mode'
+(add-hook 'latex-mode 'latex-mode-configs)
+
 ;;; themes
 ;; set the default theme
 (load-theme 'spacemacs-dark t)
