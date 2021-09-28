@@ -74,11 +74,12 @@
 ;; latex mode hook(s)
 (defun latex-mode-configs()
   "`latex-mode' specific set of configurations."
+
   ;; custom enabled minor mode(s)
   (reftex-mode))
 
 ;; configure `latex-mode'
-(add-hook 'latex-mode 'latex-mode-configs)
+(add-hook 'latex-mode-hook 'latex-mode-configs)
 
 ;;; themes
 ;; set the default theme
