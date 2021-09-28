@@ -19,7 +19,8 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode)
+  '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode
+	    auctex company-reftex)
   "List of packages to install.")
 
 (defconst theme-list
@@ -69,6 +70,21 @@
 
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
+
+;; auctex mode hook(s)
+(defun auctex-mode-configs()
+  "`auctex-mode' specific set of configurations."
+  ;; custom set variable(s)
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+
+  (setq-default TeX-master "main")
+
+  ;; custom enabled minor mode(s)
+  (turn-on-reftex))
+
+;; configure `auctex-mode'
+(add-hook 'LaTeX-mode-hook 'auctex-mode-configs)
 
 ;;; themes
 ;; set the default theme
