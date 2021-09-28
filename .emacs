@@ -74,6 +74,11 @@
 ;; auctex mode hook(s)
 (defun auctex-mode-configs()
   "`auctex-mode' specific set of configurations."
+  ;; custom set variable(s)
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+
+  (setq-default TeX-master nil)
 
   ;; custom enabled minor mode(s)
   (turn-on-reftex))
