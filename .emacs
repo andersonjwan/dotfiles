@@ -19,7 +19,7 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig)
+  '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode)
   "List of packages to install.")
 
 (defconst theme-list
