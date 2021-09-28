@@ -19,7 +19,8 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode)
+  '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode
+	    company-reftex)
   "List of packages to install.")
 
 (defconst theme-list
@@ -72,7 +73,9 @@
 
 ;; latex mode hook(s)
 (defun latex-mode-configs()
-  "`latex-mode' specific set of configurations.")
+  "`latex-mode' specific set of configurations."
+  ;; custom enabled minor mode(s)
+  (reftex-mode))
 
 ;; configure `latex-mode'
 (add-hook 'latex-mode 'latex-mode-configs)
