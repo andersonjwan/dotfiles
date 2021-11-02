@@ -48,6 +48,18 @@
 ;; after initialization hook(s)
 (defun after-init-configs ()
   "`after-init` specific set of configurations."
+  ;; custom set variable(s)
+
+  ;; set the default backup behavior to store backups in
+  ;; a designated directory with the following settings
+  ;; for keeping versions
+  (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+	backup-by-copying t
+	version-control t
+	delete-old-versions t
+	kept-new-versions 10
+	kept-old-versions 5)
+
   ;; custom enabled minor mode(s)
   (global-company-mode))
 
@@ -60,6 +72,7 @@
   ;; custom set variable(s)
   (setq show-trailing-whitespace t)
   (setq delete-trailing-lines t)
+  (setq c-basic-offset 2)
 
   ;; custom enabled minor mode(s)
   (column-number-mode)
@@ -71,12 +84,23 @@
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
 
+;; c mode hook(s)
+(defun c-mode-configs()
+  "`c-mode' specific set of configurations."
+  ;; custom set variable(s)
+  (setq indent-tabs-mode nil))
+
+;; configure `c-mode'
+(add-hook 'c-mode-hook 'c-mode-configs)
+
 ;; auctex mode hook(s)
 (defun auctex-mode-configs()
   "`auctex-mode' specific set of configurations."
   ;; custom set variable(s)
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
+
+  (setq font-latex-fontify-sectioning 'color)
 
   (setq-default TeX-master "main")
 
