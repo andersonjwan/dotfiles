@@ -60,6 +60,7 @@
   ;; custom set variable(s)
   (setq show-trailing-whitespace t)
   (setq delete-trailing-lines t)
+  (setq c-basic-offset 2)
 
   ;; custom enabled minor mode(s)
   (column-number-mode)
@@ -70,6 +71,15 @@
 
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
+
+;; c mode hook(s)
+(defun c-mode-configs()
+  "`c-mode' specific set of configurations."
+  ;; custom set variable(s)
+  (setq indent-tabs-mode nil))
+
+;; configure `c-mode'
+(add-hook 'c-mode-hook 'c-mode-configs)
 
 ;; auctex mode hook(s)
 (defun auctex-mode-configs()
