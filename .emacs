@@ -20,7 +20,7 @@
 ;; list of packages
 (defconst package-list
   '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode
-	    auctex company-reftex)
+	    auctex company-reftex matlab-mode)
   "List of packages to install.")
 
 (defconst theme-list
@@ -49,16 +49,6 @@
 (defun after-init-configs ()
   "`after-init` specific set of configurations."
   ;; custom set variable(s)
-
-  ;; set the default backup behavior to store backups in
-  ;; a designated directory with the following settings
-  ;; for keeping versions
-  (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-	backup-by-copying t
-	version-control t
-	delete-old-versions t
-	kept-new-versions 10
-	kept-old-versions 5)
 
   ;; custom enabled minor mode(s)
   (global-company-mode))
