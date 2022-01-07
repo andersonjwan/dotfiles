@@ -20,7 +20,7 @@
 ;; list of packages
 (defconst package-list
   '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode
-	    auctex company-reftex matlab-mode)
+	    auctex company-reftex matlab-mode cython-mode cmake-mode)
   "List of packages to install.")
 
 (defconst theme-list
