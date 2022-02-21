@@ -56,6 +56,14 @@
 ;; configure `after-init'
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; text mode hook(s)
+(defun text-mode-configs ()
+  "`text-mode' specific set of configurations."
+  ;; custom enabled minor mode(s)
+  (display-line-numbers-mode))
+
+(add-hook 'text-mode-hook 'text-mode-configs)
+
 ;; programming mode hook(s)
 (defun prog-mode-configs ()
   "`prog-mode' specific set of configurations."
@@ -95,7 +103,8 @@
   (setq-default TeX-master "main")
 
   ;; custom enabled minor mode(s)
-  (turn-on-reftex))
+  (turn-on-reftex)
+  (flyspell-mode))
 
 ;; configure `auctex-mode'
 (add-hook 'LaTeX-mode-hook 'auctex-mode-configs)
