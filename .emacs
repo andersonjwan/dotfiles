@@ -19,8 +19,17 @@
 ;; install packages automatically if not preset
 ;; list of packages
 (defconst package-list
-  '(company smartparens flycheck editorconfig yaml-mode dockerfile-mode
-	    auctex company-reftex matlab-mode cython-mode cmake-mode)
+  '(auctex
+    cmake-mode
+    company
+    company-reftex
+    cython-mode
+    dockerfile-mode
+    editorconfig
+    flycheck
+    matlab-mode
+    smartparens
+    yaml-mode)
   "List of packages to install.")
 
 (defconst theme-list
