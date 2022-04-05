@@ -70,7 +70,8 @@
   ;; custom set variable(s)
   (setq show-trailing-whitespace t)
   (setq delete-trailing-lines t)
-  (setq c-basic-offset 2)
+  (setq c-basic-offset 4)
+  (setq indent-tabs-mode nil)
 
   ;; custom enabled minor mode(s)
   (column-number-mode)
@@ -90,6 +91,13 @@
 
 ;; configure `c-mode'
 (add-hook 'c-mode-hook 'c-mode-configs)
+
+;; c++ mode hook(s)
+(defun c++-mode-configs()
+  "`c++-mode' specific set of configurations."
+
+  ;; custom set variable(s)
+  (setq flycheck-gcc-language-standard "c++20"))
 
 ;; auctex mode hook(s)
 (defun auctex-mode-configs()
