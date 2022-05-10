@@ -12,9 +12,10 @@ git pull origin main;
 
 # Update set of dotfiles and execute.
 function doIt() {
-    rsync --exclude ".git/" \
-	  --exclude "bootstrap.sh" \
-	  --exclude "README.md" \
+    rsync --exclude "*~" \
+          --exclude "bootstrap.sh" \
+	  --exclude ".git/" \
+          --exclude "README.md" \
 	  --archive --verbose --human-readable . ~;
     source ~/.bash_profile;
 }
