@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # Set Emacs as default editor
-export EDITOR="emacs";
+export EDITOR="emacs -nw";
