@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Navigational shortcuts
+alias ..="cd .."
