@@ -4,10 +4,10 @@
 # This is a helper configuration for the defined function `open` below.
 if [ ! $(uname -s) = "Darwin" ]; then
     if grep -q Microsoft /proc/version; then
-	# Use the WSL on Windows
-	alias openIt="explorer.exe";
+        # Use the WSL on Windows
+        alias openIt="explorer.exe";
     else
-	alias openIt="xdg-open";
+        alias openIt="xdg-open";
     fi
 fi
 
@@ -16,8 +16,8 @@ fi
 # no arguments supplied, the current directory is opened.
 function open() {
     if [ $# -eq 0 ]; then
-	openIt .;
+        openIt .;
     else
-	openIt "$@";
+        openIt "$@";
     fi;
 }

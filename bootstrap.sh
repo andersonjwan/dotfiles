@@ -14,9 +14,9 @@ git pull origin main;
 function doIt() {
     rsync --exclude "*~" \
           --exclude "bootstrap.sh" \
-	  --exclude ".git/" \
+          --exclude ".git/" \
           --exclude "README.md" \
-	  --archive --verbose --human-readable . ~;
+          --archive --verbose --human-readable . ~;
     source ~/.bash_profile;
 }
 
@@ -30,6 +30,6 @@ else
     echo "";
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-	doIt;
+        doIt;
     fi;
 fi;
