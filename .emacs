@@ -11,6 +11,22 @@
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
 
+;;; Backups
+;; For more information, see:
+;; https://stackoverflow.com/a/18330742
+(defvar backup-path (concat user-emacs-directory "backups"))
+(if (not (file-directory-p backup-path))
+    (make-directory backup-path t))
+
+(setq backup-directory-alist '(("." . backup-path)))
+(setq backup-by-copying t
+      delete-old-versions t
+      kept-old-versions 4
+      kept-new-versions 4
+      make-backup-files t
+      version-control t)
+
+
 ;;; package management
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
