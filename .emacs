@@ -1,6 +1,9 @@
-;; emacs configuration file
-;; @author: Jacob Anderson <andersonjwan@gmail.com>
+;;; package --- My custom Emacs configurations.
+;;; Commentary:
+;;; Emacs configuration file.
+;;; @author: Jacob Anderson <andersonjwan@gmail.com>
 
+;;; Code:
 ;; disable the tool bar, menu bar, and scroll bar
 ;; to reduce clutter of the editor
 (tool-bar-mode -1)
