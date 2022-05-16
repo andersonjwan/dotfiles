@@ -23,5 +23,7 @@ if [ -d ~/.bashrc.d ]; then
 		fi
 	done
 fi
-
 unset rc
+
+# Source custom Bash shell configurations
+source ~/.bash_profile;
