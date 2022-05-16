@@ -18,7 +18,7 @@
 (if (not (file-directory-p backup-path))
     (make-directory backup-path t))
 
-(setq backup-directory-alist '(("." . backup-path)))
+(setq backup-directory-alist `(("." . ,backup-path)))
 (setq backup-by-copying t
       delete-old-versions t
       kept-old-versions 4
