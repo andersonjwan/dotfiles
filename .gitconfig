@@ -1,0 +1,7 @@
+[user]
+	email = andersonjwan@gmail.com
+	name = Jacob Anderson
+[gpg]
+	program = gpg2
+[commit]
+	gpgSign = true
