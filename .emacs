@@ -26,7 +26,6 @@
       make-backup-files t
       version-control t)
 
-
 ;;; Packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -42,6 +41,7 @@
     company
     company-reftex
     cython-mode
+    diff-hl
     dockerfile-mode
     editorconfig
     flycheck
@@ -79,10 +79,15 @@
   ;; custom set variables
 
   ;; custom enabled minor modes
-  (global-company-mode))
+  (global-company-mode)
+  (global-hl-line-mode))
 
 ;; configure `after-init'
-(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'after-init-configs)
+
+;; additional hooks
+(add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ;; text mode hooks
 (defun text-mode-configs ()
