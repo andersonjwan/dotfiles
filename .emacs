@@ -45,6 +45,7 @@
     dockerfile-mode
     editorconfig
     flycheck
+    magit
     matlab-mode
     smartparens
     yaml-mode)
@@ -55,7 +56,7 @@
   "List of themes to install.")
 
 ;; refresh the list of available packages
-(unless package-archive-contents
+(when (not package-archive-contents)
   (package-refresh-contents))
 
 ;; install missing packages
