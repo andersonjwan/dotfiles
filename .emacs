@@ -45,9 +45,14 @@
     dockerfile-mode
     editorconfig
     flycheck
+    lsp-mode
     magit
     matlab-mode
+    rust-mode
+    rustic
     smartparens
+    tree-sitter
+    tree-sitter-langs
     yaml-mode)
   "List of packages to install.")
 
@@ -80,10 +85,14 @@
 
   ;; custom enabled minor modes
   (global-company-mode)
-  (global-hl-line-mode))
+  (global-hl-line-mode)
+  (global-tree-sitter-mode))
 
 ;; configure `after-init'
 (add-hook 'after-init-hook 'after-init-configs)
+
+;; after after initialization hooks
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; additional hooks
 (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
@@ -115,6 +124,17 @@
 
 ;; configure `prog-mode'
 (add-hook 'prog-mode-hook 'prog-mode-configs)
+
+;; Rust
+(defun rust-mode-configs()
+  ;; custom variables
+  (setq indent-tabs-mode nil)   ;; use spaces
+  (setq rust-format-on-save t)  ;; format code on save
+
+  ;; custom minor modes
+  (prettify-symbols-mode))
+
+(add-hook 'rust-mode-hook 'rust-mode-configs)
 
 ;; c mode hooks
 (defun c-mode-configs()
