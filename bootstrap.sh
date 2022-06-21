@@ -9,7 +9,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 # Pull the latest changes
 git pull --recurse-submodules origin main;
-git submodule update --init --recursive;
+git submodule foreach git pull origin main;
 
 # Update set of dotfiles and execute.
 function doIt() {
