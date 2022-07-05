@@ -7,5 +7,3 @@
 	gpgSign = true
 [init]
 	defaultBranch = main
-[core]
-	autocrlf = true
