@@ -5,3 +5,5 @@
 	program = gpg2
 [commit]
 	gpgSign = true
+[init]
+	defaultBranch = main
