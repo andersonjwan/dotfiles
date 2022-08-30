@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Navigational shortcuts
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias clear='echo "Reminder: Use Ctrl+L to clear the screen!"'
