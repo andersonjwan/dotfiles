@@ -2,3 +2,7 @@
 
 # Set Emacs as default editor
 export EDITOR="emacs -nw";
+
+# Set the command history size of Bash
+export HISTSIZE=20000;
+export HISTFILESIZE=20000;
