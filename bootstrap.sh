@@ -7,10 +7,6 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-# Pull the latest changes
-git pull --recurse-submodules origin main;
-git submodule foreach git pull origin main;
-
 # Update set of dotfiles and execute.
 function doIt() {
     rsync --exclude "bootstrap.sh" \
