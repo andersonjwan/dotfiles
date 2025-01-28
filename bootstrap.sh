@@ -11,7 +11,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 function doIt() {
     rsync --exclude "bootstrap.sh" \
           --exclude ".git/" \
-	  --exclude ".gitmodules" \
+          --exclude ".gitmodules" \
           --exclude "README.md" \
           --archive --verbose --human-readable . ~;
     source ~/.bash_profile;
