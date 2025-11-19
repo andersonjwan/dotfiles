@@ -10,11 +10,14 @@ cd "$(dirname "${BASH_SOURCE}")";
 # Update set of dotfiles and execute.
 function doIt() {
     rsync --exclude "bootstrap.sh" \
+          --exclude ".bashrc" \
           --exclude ".git/" \
           --exclude ".gitmodules" \
           --exclude "README.md" \
           --archive --verbose --human-readable . ~;
-    source ~/.bash_profile;
+
+    echo "" >> ~/.bashrc;
+    cat ".bashrc" >> ~/.bashrc;
 }
 
 # Bootstrap dotfiles.
